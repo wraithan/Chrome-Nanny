@@ -490,6 +490,7 @@ BackGroundManager = {
 			var redirectUrl = BackGroundManager.genOptions.redirectUrl;
 			if(!(redirectUrl == null || redirectUrl == ""))
 			{
+				redirectUrl = redirectUrl.replace('$U', url)
 				console.log('redirecting tab id ' + tabId + ' to url : ' + redirectUrl);
 				chrome.tabs.update(tabId,{'url':redirectUrl});
 				return;
